@@ -1,6 +1,7 @@
 import React from "react";
 import DynamicForm from "../components/dynamicForm";
 
+
 const EmployeeForm = () => {
   const employeeFormSections = [
     {
@@ -10,23 +11,29 @@ const EmployeeForm = () => {
           name: "empId",
           label: "Employee ID",
           type: "text",
+          required: true
         },
         {
           name: "empName",
           label: "Employee Name",
           type: "text",
+          required: true
         },
         {
           name: "department",
           label: "Department",
           type: "text",
+          required: true
         },
-
         {
           name: "gender",
           label: "Gender",
           type: "radio",
           required: true,
+          options: [
+            { label: "Male", value: "male" },
+            { label: "Female", value: "female" },
+          ],
         },
         {
           name: "Phone",
@@ -45,7 +52,7 @@ const EmployeeForm = () => {
   ];
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <DynamicForm
         title="Employee Registration Form"
         sections={employeeFormSections}

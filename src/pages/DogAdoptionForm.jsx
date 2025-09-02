@@ -6,59 +6,67 @@ const DogAdoptionForm = () => {
     {
       heading: "Dog Adoption Form",
       fields: [
-    {
-      name: "nameOfDog",
-      label: "Name of the dog",
-      type: "text",
+        {
+          name: "nameOfDog",
+          label: "Name of the dog",
+          type: "text",
+          required: true
+        },
+        {
+          name: "adopterName",
+          label: "Adopter's Name",
+          type: "text",
+          required: true
+        },
+        {
+          name: "email",
+          label: "Adopter's Email",
+          type: "email",
+          required: true
+        },
+        {
+          name: "phone",
+          label: "Phone Number",
+          type: "tel",
+          required: true
+        },
+        {
+          name: "city",
+          label: "City",
+          type: "text",
+          required: true
+        },
+        {
+          name: "state",
+          label: "State",
+          type: "text",
+          required: true
+        },
+        {
+          name: "country",
+          label: "Country",
+          type: "text",
+          required: true
+        },
+        {
+          name: "currentlyPets",
+          label: "Do you currently have any pets?",
+          type: "radio",
+          required: true,
+          options: [
+            { label: "Yes", value: "yes" },
+            { label: "No", value: "no" },
+          ],
+        },
+      ],
     },
-    {
-      name: "adopterName",
-      label: "Adopter's Name",
-      type: "text",
-    },
-    {
-      name: "email",
-      label: "Adopter's Email",
-      type: "email",
-    },
-    {
-      name: "phone",
-      label: "Phone Number",
-      type: "tel",
-    },
-    {
-      name: "city",
-      label: "City",
-      type: "text",
-    },
-    {
-      name: "state",
-      label: "State",
-      type: "text",
-    },
-    {
-      name: "country",
-      label: "Country",
-      type: "text",
-    },
-    {
-      name: "currentlyPets",
-      label: "Do you currently have any pets",
-      type: "radio",
-    },
-    ]
-    }
   ];
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white rounded shadow">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <DynamicForm title="Dog Adoption Form" sections={dogFormFields} />
     </div>
   );
 };
 
 export default DogAdoptionForm;
-
-
-
-
