@@ -64,7 +64,9 @@ const DogAdoptionForm = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="max-w-4xl w-full bg-white shadow-xl rounded-2xl p-10">
       <DynamicForm title="Dog Adoption Form" sections={dogFormFields} />
+      </div>
     </div>
   );
 };
