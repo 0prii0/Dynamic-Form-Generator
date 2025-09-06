@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { GraduationCap, Briefcase, Dog, Cat } from "lucide-react";
+import { GraduationCap, Briefcase, Dog } from "lucide-react";
 
 const Navbar = () => {
   return (

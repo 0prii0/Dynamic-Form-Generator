@@ -1,6 +1,20 @@
 import React from "react";
 
 function DynamicForm({ title, sections }) {
+
+
+const handleSubmit = (e) => {
+  e.preventDefault(); 
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData.entries()); 
+
+  console.log("Form Submitted: ", data);
+}
+
+
+
+
   return (
     <>
       <div className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-8 shadow-lg">
@@ -9,7 +23,8 @@ function DynamicForm({ title, sections }) {
         </h1>
       </div>
       <div className="max-w-4xl mx-auto my-10 px-6">
-        <form className="space-y-12">
+        <form className="space-y-12" onSubmit= {handleSubmit}>
+          
           {sections.map((section, sectionIndex) => (
             <div
               className="p-8 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300"
@@ -26,7 +41,10 @@ function DynamicForm({ title, sections }) {
                       htmlFor={field.name}
                       className="mb-3 text-base font-semibold text-gray-700 tracking-wide"
                     >
-                      {field.label}
+                      {field.label}{" "}
+                      {field.required && (
+                        <span className="text-red-500">*</span>
+                      )}
                     </label>
 
                     {field.type === "radio" ? (
